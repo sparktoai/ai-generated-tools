@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>robots.txt 生成器 - 在线创建搜索引擎robots.txt文件</title>
+    <meta name="description" content="免费在线robots.txt生成器，帮助网站管理员快速创建符合SEO规范的robots.txt文件。支持Google、Bing、百度等搜索引擎设置。">
+    <link rel="canonical" href="https://sparktoai.com/zh/ai-generated-tools/robots-txt-generator.html">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://sparktoai.com/zh/ai-generated-tools/robots-txt-generator.html">
+    <meta property="og:title" content="robots.txt 生成器 - 在线创建搜索引擎robots.txt文件">
+    <meta property="og:description"
+        content="免费在线robots.txt生成器，帮助网站管理员快速创建符合SEO规范的robots.txt文件。支持Google、Bing、百度等搜索引擎设置。">
+    <meta property="og:image" content="https://sparktoai.com/zh/images/2025/robots-txt-generator-2.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://sparktoai.com/zh/ai-generated-tools/robots-txt-generator.html">
+    <meta property="twitter:title" content="robots.txt 生成器 - 在线创建搜索引擎robots.txt文件">
+    <meta property="twitter:description"
+        content="免费在线robots.txt生成器，帮助网站管理员快速创建符合SEO规范的robots.txt文件。支持Google、Bing、百度等搜索引擎设置。">
+    <meta property="twitter:image" content="https://sparktoai.com/zh/images/2025/robots-txt-generator-2.png">
+
+    <style>
+        /* 基础样式重置 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f7fa;
+            padding-bottom: 100px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px 0;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            color: #7f8c8d;
+        }
+
+        .seo-info {
+            background-color: #e3f2fd;
+            border-left: 4px solid #2196f3;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .seo-info h3 {
+            margin-top: 0;
+            color: #0d47a1;
+        }
+
+        .seo-info ul {
+            padding-left: 20px;
+        }
+
+        .seo-info li {
+            margin-bottom: 8px;
+        }
+
+        .main-content {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        /* 配置面板样式 */
+        .config-panel {
+            flex: 1;
+            min-width: 300px;
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .config-panel h2 {
+            margin-bottom: 20px;
+            color: #2c3e50;
+            font-size: 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #34495e;
+        }
+
+        .form-group input[type="text"],
+        .form-group input[type="number"],
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input[type="text"]:focus,
+        .form-group input[type="number"]:focus,
+        .form-group textarea:focus {
+            border-color: #3498db;
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+        }
+
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .checkbox-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .checkbox-group label {
+            display: flex;
+            align-items: center;
+            font-weight: normal;
+            cursor: pointer;
+        }
+
+        .checkbox-group input[type="checkbox"] {
+            margin-right: 8px;
+            transform: scale(1.2);
+        }
+
+        /* 预览面板样式 */
+        .preview-panel {
+            flex: 1;
+            min-width: 300px;
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .preview-panel h2 {
+            margin-bottom: 20px;
+            color: #2c3e50;
+            font-size: 1.5rem;
+        }
+
+        .preview-content {
+            flex: 1;
+            background-color: #2c3e50;
+            border-radius: 6px;
+            padding: 20px;
+            overflow: auto;
+            min-height: 300px;
+        }
+
+        #robotsPreview {
+            color: #ecf0f1;
+            font-family: 'Courier New', monospace;
+            font-size: 1rem;
+            line-height: 1.5;
+            white-space: pre-wrap;
+            word-break: break-all;
+        }
+
+        .preview-actions {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .preview-actions button {
+            flex: 1;
+            padding: 14px;
+            border: none;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        #copyBtn {
+            background-color: #2ecc71;
+            color: white;
+        }
+
+        #copyBtn:hover {
+            background-color: #27ae60;
+        }
+
+        #downloadBtn {
+            background-color: #9b59b6;
+            color: white;
+        }
+
+        #downloadBtn:hover {
+            background-color: #8e44ad;
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+
+            header h1 {
+                font-size: 2rem;
+            }
+
+            .main-content {
+                flex-direction: column;
+            }
+
+            .config-panel,
+            .preview-panel {
+                min-width: 100%;
+            }
+
+            .preview-actions {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 1.8rem;
+            }
+
+            .config-panel,
+            .preview-panel {
+                padding: 15px;
+            }
+
+            .checkbox-group {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>robots.txt 生成器</h1>
+            <p>快速生成符合搜索引擎规范的robots.txt文件</p>
+        </header>
+
+        <div class="seo-info">
+            <h3>SEO优化提示</h3>
+            <ul>
+                <li>robots.txt文件应放置在网站根目录下（如：https://sparktoai.com/robots.txt）</li>
+                <li>正确设置网站地图(Sitemap)有助于搜索引擎更好地抓取您的网站</li>
+                <li>合理设置禁止抓取的路径，避免搜索引擎抓取重复或无用内容</li>
+                <li>适当设置抓取延迟可以减轻服务器压力</li>
+                <li>使用工具定期检查robots.txt文件的有效性</li>
+            </ul>
+        </div>
+
+        <div class="main-content">
+            <!-- 左侧配置面板 -->
+            <div class="config-panel">
+                <h2>配置参数</h2>
+                <form id="robotsForm">
+                    <!-- 网站地图设置 -->
+                    <div class="form-group">
+                        <label for="sitemap">网站地图 (Sitemap) 地址</label>
+                        <input type="text" id="sitemap" placeholder="https://sparktoai.com/sitemap.xml">
+                    </div>
+
+                    <!-- 搜索引擎权限设置 -->
+                    <div class="form-group">
+                        <label>搜索引擎权限设置</label>
+                        <div class="checkbox-group">
+                            <label>
+                                <input type="checkbox" id="google" checked>
+                                Google
+                            </label>
+                            <label>
+                                <input type="checkbox" id="bing" checked>
+                                Bing
+                            </label>
+                            <label>
+                                <input type="checkbox" id="baidu" checked>
+                                百度
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- 禁止抓取路径设置 -->
+                    <div class="form-group">
+                        <label for="disallowPaths">禁止抓取的路径</label>
+                        <textarea id="disallowPaths"
+                            placeholder="每行输入一个路径，例如：&#10;/admin&#10;/private&#10;/secret"></textarea>
+                    </div>
+
+                    <!-- 抓取延迟设置 -->
+                    <div class="form-group">
+                        <label for="crawlDelay">抓取延迟 (秒)</label>
+                        <input type="number" id="crawlDelay" min="1" max="60" placeholder="例如：10">
+                    </div>
+                </form>
+            </div>
+
+            <!-- 右侧预览面板 -->
+            <div class="preview-panel">
+                <h2>预览内容</h2>
+                <div class="preview-content">
+                    <pre id="robotsPreview"># 您的 robots.txt 内容将在这里显示</pre>
+                </div>
+                <div class="preview-actions">
+                    <button id="copyBtn">复制到剪贴板</button>
+                    <button id="downloadBtn">下载 robots.txt</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 页面加载完成后初始化
+        document.addEventListener('DOMContentLoaded', function () {
+            // 获取DOM元素
+            const sitemapInput = document.getElementById('sitemap');
+            const googleCheckbox = document.getElementById('google');
+            const bingCheckbox = document.getElementById('bing');
+            const baiduCheckbox = document.getElementById('baidu');
+            const disallowPathsTextarea = document.getElementById('disallowPaths');
+            const crawlDelayInput = document.getElementById('crawlDelay');
+            const robotsPreview = document.getElementById('robotsPreview');
+            const copyBtn = document.getElementById('copyBtn');
+            const downloadBtn = document.getElementById('downloadBtn');
+
+            // 初始化时生成一次默认内容
+            generateRobotsTxt();
+
+            // 绑定复制按钮事件
+            copyBtn.addEventListener('click', copyToClipboard);
+
+            // 绑定下载按钮事件
+            downloadBtn.addEventListener('click', downloadRobotsTxt);
+
+            // 实时更新预览
+            const formInputs = document.querySelectorAll('#robotsForm input, #robotsForm textarea');
+            formInputs.forEach(input => {
+                input.addEventListener('input', generateRobotsTxt);
+            });
+
+            // 为复选框单独绑定change事件
+            googleCheckbox.addEventListener('change', generateRobotsTxt);
+            bingCheckbox.addEventListener('change', generateRobotsTxt);
+            baiduCheckbox.addEventListener('change', generateRobotsTxt);
+
+            // 生成robots.txt内容的函数
+            function generateRobotsTxt() {
+                let content = '';
+
+                // 添加用户代理声明
+                content += '# robots.txt 文件自动生成\n';
+                content += '# 更多信息请访问: https://www.robotstxt.org/\n\n';
+
+                // 处理搜索引擎权限
+                if (!googleCheckbox.checked || !bingCheckbox.checked || !baiduCheckbox.checked) {
+                    // 如果有任何搜索引擎被禁用，则分别设置
+                    if (!googleCheckbox.checked) {
+                        content += 'User-agent: Googlebot\n';
+                        content += 'Disallow: /\n\n';
+                    }
+
+                    if (!bingCheckbox.checked) {
+                        content += 'User-agent: Bingbot\n';
+                        content += 'Disallow: /\n\n';
+                    }
+
+                    if (!baiduCheckbox.checked) {
+                        content += 'User-agent: Baiduspider\n';
+                        content += 'Disallow: /\n\n';
+                    }
+
+                    // 允许其他所有爬虫
+                    content += 'User-agent: *\n';
+                    content += 'Allow: /\n\n';
+                } else {
+                    // 所有搜索引擎都被允许
+                    content += 'User-agent: *\n';
+                    content += 'Allow: /\n\n';
+                }
+
+                // 处理禁止抓取的路径
+                const disallowPaths = disallowPathsTextarea.value.split('\n')
+                    .map(path => path.trim())
+                    .filter(path => path.length > 0);
+
+                if (disallowPaths.length > 0) {
+                    content += '# 禁止访问的目录\n';
+                    disallowPaths.forEach(path => {
+                        // 确保路径以斜杠开头
+                        if (!path.startsWith('/')) {
+                            path = '/' + path;
+                        }
+                        content += `Disallow: ${path}\n`;
+                    });
+                    content += '\n';
+                }
+
+                // 处理抓取延迟
+                const crawlDelay = parseInt(crawlDelayInput.value);
+                if (!isNaN(crawlDelay) && crawlDelay > 0) {
+                    content += `Crawl-delay: ${crawlDelay}\n\n`;
+                }
+
+                // 处理网站地图
+                const sitemap = sitemapInput.value.trim();
+                if (sitemap) {
+                    content += `Sitemap: ${sitemap}\n`;
+                }
+
+                // 更新预览内容
+                robotsPreview.textContent = content;
+            }
+
+            // 复制到剪贴板功能
+            function copyToClipboard() {
+                const textarea = document.createElement('textarea');
+                textarea.value = robotsPreview.textContent;
+                document.body.appendChild(textarea);
+                textarea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textarea);
+
+                // 显示复制成功提示
+                const originalText = copyBtn.textContent;
+                copyBtn.textContent = '已复制!';
+                setTimeout(() => {
+                    copyBtn.textContent = originalText;
+                }, 2000);
+            }
+
+            // 下载robots.txt文件功能
+            function downloadRobotsTxt() {
+                const content = robotsPreview.textContent;
+                const blob = new Blob([content], { type: 'text/plain' });
+                const url = URL.createObjectURL(blob);
+
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = 'robots.txt';
+                document.body.appendChild(a);
+                a.click();
+
+                // 清理
+                setTimeout(() => {
+                    document.body.removeChild(a);
+                    URL.revokeObjectURL(url);
+                }, 100);
+            }
+        });
+    </script>
+    <footer style="text-align: center; padding: 20px; color: #666; font-size: 14px;">
+        <p>本页面使用AI编程工具Qoder辅助开发，并通过了开发者的审核和测试，<a href="https://sparktoai.com/zh/articles/robots-txt-generator.html"
+                target="_blank" style="color: #3498db; text-decoration: none;">在此记录了整个开发过程和心得。</a></p>
+    </footer>
+</body>
+
+</html>
