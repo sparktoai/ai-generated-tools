@@ -27,7 +27,7 @@
 ## 使用方法
 直接在浏览器中打开 HTML 文件：
 - 英文版本：`robots-txt-generator.html`
-- 中文版本：`zh/ai-generated-tools/robots-txt-generator.html`
+- 中文版本：`zh/robots-txt-generator.html`
 
 ## 开发总结
 - [开发总结英文版](https://sparktoai.com/articles/robots-txt-generator.html)

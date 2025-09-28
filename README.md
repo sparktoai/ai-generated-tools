@@ -27,7 +27,7 @@ An online tool to quickly generate robots.txt files compliant with search engine
 ## Usage
 Simply open the HTML file in your browser:
 - English version: `robots-txt-generator.html`
-- Chinese version: `zh/ai-generated-tools/robots-txt-generator.html`
+- Chinese version: `zh/robots-txt-generator.html`
 
 ## Development Summary
 - [Development Summary (English)](https://sparktoai.com/articles/robots-txt-generator.html)
